@@ -1,0 +1,6 @@
+@HangmanBackend_HostAddress = http://localhost:5155
+
+GET {{HangmanBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
