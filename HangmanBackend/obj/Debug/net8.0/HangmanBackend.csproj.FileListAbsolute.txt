@@ -1,0 +1,8 @@
+C:\Users\andre.siqueira\Desktop\Estudo\9 - C#\HangmanBackend\HangmanBackend\obj\Debug\net8.0\HangmanBackend.csproj.AssemblyReference.cache
+C:\Users\andre.siqueira\Desktop\Estudo\9 - C#\HangmanBackend\HangmanBackend\obj\Debug\net8.0\HangmanBackend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre.siqueira\Desktop\Estudo\9 - C#\HangmanBackend\HangmanBackend\obj\Debug\net8.0\HangmanBackend.AssemblyInfoInputs.cache
+C:\Users\andre.siqueira\Desktop\Estudo\9 - C#\HangmanBackend\HangmanBackend\obj\Debug\net8.0\HangmanBackend.AssemblyInfo.cs
+C:\Users\andre.siqueira\Desktop\Estudo\9 - C#\HangmanBackend\HangmanBackend\obj\Debug\net8.0\HangmanBackend.csproj.CoreCompileInputs.cache
+C:\Users\andre.siqueira\Desktop\Estudo\9 - C#\HangmanBackend\HangmanBackend\obj\Debug\net8.0\HangmanBackend.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\andre.siqueira\Desktop\Estudo\9 - C#\HangmanBackend\HangmanBackend\obj\Debug\net8.0\HangmanBackend.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\andre.siqueira\Desktop\Estudo\9 - C#\HangmanBackend\HangmanBackend\obj\Debug\net8.0\HangmanBackend.sourcelink.json
