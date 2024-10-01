@@ -4,7 +4,7 @@
     {
         private static List<Words> words = new List<Words>();
         Random random = new Random();
-        private Words SecretWord;
+        public Words SecretWord;
         private string userAnswer = "";
         private int Mistakes = 0;
         private const int MaxMistakes = 6;

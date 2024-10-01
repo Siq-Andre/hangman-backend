@@ -11,7 +11,19 @@ namespace HangmanBackend.Controllers
         private static Hangman hangmanGame = new Hangman();
 
         [HttpPost("addWords")]
-        public IActionResult PostAllWordsFromJson()
+        /*public IActionResult PostAllWordsFromJson()
+        {
+            
+        }*/
+
+        [HttpGet]
+        public ActionResult<List<Words>> GetAllWords()
+        {
+            return Ok(hangmanGame.GetWords());
+        }
+
+        [HttpGet("getRandom")]
+        public ActionResult<string> GetRandomWord()
         {
             string wordsJsonPath = "Data/Words.json";
 
@@ -32,26 +44,16 @@ namespace HangmanBackend.Controllers
                 }
 
                 hangmanGame.SetWords(listOfWords);
-                return Ok("Words list updated from JSON file.");
             }
             catch (Exception ex)
             {
                 return BadRequest($"Error processing the JSON file: {ex.Message}");
             }
-        }
 
-        [HttpGet]
-        public ActionResult<List<Words>> GetAllWords()
-        {
-            return Ok(hangmanGame.GetWords());
-        }
-
-        [HttpGet("getRandom")]
-        public ActionResult<string> GetRandomWord()
-        {
             hangmanGame.SetSecretWord();
             string maskedWord = hangmanGame.GetUserAnswer();
-            return Ok(maskedWord);
+            Words secretWord = hangmanGame.SecretWord;
+            return Ok(secretWord);
         }
 
         [HttpPost("guessLetter")]

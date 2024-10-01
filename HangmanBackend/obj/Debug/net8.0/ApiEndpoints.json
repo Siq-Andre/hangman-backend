@@ -21,13 +21,23 @@
   },
   {
     "ContainingType": "HangmanBackend.Controllers.HangmanController",
-    "Method": "PostAllWordsFromJson",
+    "Method": "GetAllWords",
     "RelativePath": "api/Hangman/addWords",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[HangmanBackend.Model.Words, HangmanBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "HangmanBackend.Controllers.HangmanController",

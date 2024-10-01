@@ -17,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|c:\\users\\andre.siqueira\\desktop\\estudo\\9 - c#\\hangmanbackend\\hangmanbackend\\data\\words.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|solutionrelative:hangmanbackend\\data\\words.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|c:\\users\\andre.siqueira\\desktop\\estudo\\9 - c#\\hangmanbackend\\hangmanbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|solutionrelative:hangmanbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +30,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Program.cs",
+              "RelativeDocumentMoniker": "HangmanBackend\\Program.cs",
+              "ToolTip": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Program.cs",
+              "RelativeToolTip": "HangmanBackend\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwCAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T17:07:50.368Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -36,7 +53,7 @@
               "RelativeDocumentMoniker": "HangmanBackend\\Data\\Words.json",
               "ToolTip": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Data\\Words.json",
               "RelativeToolTip": "HangmanBackend\\Data\\Words.json",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAswMEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAmwLcAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-01T14:24:00.151Z",
               "EditorCaption": ""
@@ -47,9 +64,9 @@
               "Title": "HangmanController.cs",
               "DocumentMoniker": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Controllers\\HangmanController.cs",
               "RelativeDocumentMoniker": "HangmanBackend\\Controllers\\HangmanController.cs",
-              "ToolTip": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Controllers\\HangmanController.cs",
-              "RelativeToolTip": "HangmanBackend\\Controllers\\HangmanController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Controllers\\HangmanController.cs*",
+              "RelativeToolTip": "HangmanBackend\\Controllers\\HangmanController.cs*",
+              "ViewState": "AgIAACIAAAAAAAAAAAAkwDcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T14:21:04.574Z",
               "EditorCaption": ""
@@ -62,7 +79,7 @@
               "RelativeDocumentMoniker": "HangmanBackend\\Model\\Hangman.cs",
               "ToolTip": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Model\\Hangman.cs",
               "RelativeToolTip": "HangmanBackend\\Model\\Hangman.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAkwGsAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T14:18:57.143Z",
               "EditorCaption": ""
