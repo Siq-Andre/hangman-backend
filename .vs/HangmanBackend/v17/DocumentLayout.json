@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|c:\\users\\andre.siqueira\\desktop\\estudo\\9 - c#\\hangmanbackend\\hangmanbackend\\model\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|solutionrelative:hangmanbackend\\model\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Words.cs",
+              "DocumentMoniker": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Model\\Words.cs",
+              "RelativeDocumentMoniker": "HangmanBackend\\Model\\Words.cs",
+              "ToolTip": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Model\\Words.cs",
+              "RelativeToolTip": "HangmanBackend\\Model\\Words.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T13:59:17.113Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
