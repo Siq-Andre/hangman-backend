@@ -1,21 +1,18 @@
-﻿namespace HangmanBackend.Model
+﻿using System.Text.Json;
+
+namespace HangmanBackend.Model
 {
     public class Hangman
     {
         private static List<Words> words = new List<Words>();
         Random random = new Random();
-        public Words SecretWord;
+        public Words SecretWord = null;
         private string userAnswer = "";
         private int Mistakes = 0;
         private const int MaxMistakes = 6;
         private List<string> GuessedLetters = new List<string>();
         public bool GameWon { get; private set; }
         public bool GameLost { get; private set; }
-
-        public void SetWords(List<Words> possibleWords)
-        {
-            words = possibleWords;
-        }
 
         public List<Words> GetWords()
         {
@@ -27,8 +24,46 @@
             return userAnswer;
         }
 
-        public void SetSecretWord()
+        public void SetUserAnswer(Words SecretWord)
         {
+            for (var i = 0; i < SecretWord.WordName.Length; i++)
+            {
+                userAnswer += "_";
+            }
+
+        }
+
+        public string SetWords()
+        {
+            string wordsJsonPath = "Data/Words.json";
+
+            if (!System.IO.File.Exists(wordsJsonPath))
+            {
+                return ("The JSON file was not found.");
+            }
+
+            
+            var jsonData = System.IO.File.ReadAllText(wordsJsonPath);
+
+            List<Words> listOfWords = JsonSerializer.Deserialize<List<Words>>(jsonData);
+
+            if (listOfWords == null || listOfWords.Count == 0)
+            {
+                return ("The JSON file is invalid or contains no words.");
+            }
+
+            words = listOfWords;
+            return ("The list of words was updated");
+            
+        }
+
+        public string InitGame()
+        {
+            if (words == null)
+            {
+                SetWords();
+            }
+
             userAnswer = "";
             GameWon = false;
             GameLost = false;
@@ -36,13 +71,12 @@
             int randomID = random.Next(0, words.Count);
             SecretWord = words[randomID];
 
-            for (var i = 0; i < SecretWord.WordName.Length; i++)
-            {
-                userAnswer += "*";
-            }
+            SetUserAnswer(SecretWord);
 
             GuessedLetters.Clear();
             Mistakes = 0;
+
+            return userAnswer;
         }
 
         public bool CheckUsedLetters(string letter)

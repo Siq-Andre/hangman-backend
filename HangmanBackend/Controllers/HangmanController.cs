@@ -23,7 +23,7 @@ namespace HangmanBackend.Controllers
         }
 
         [HttpGet("getRandom")]
-        public ActionResult<string> GetRandomWord()
+        public ActionResult<string> InitGame()
         {
             string wordsJsonPath = "Data/Words.json";
 

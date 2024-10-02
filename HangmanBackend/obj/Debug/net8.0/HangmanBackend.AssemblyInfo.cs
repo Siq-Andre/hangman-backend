@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HangmanBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23fcbb673c6336e42d9f035ce884dc87cf6ef66b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb673756bba7d93c11d4b1f5250efce4b86396ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("HangmanBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HangmanBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
