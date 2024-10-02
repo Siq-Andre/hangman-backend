@@ -21,48 +21,8 @@
   },
   {
     "ContainingType": "HangmanBackend.Controllers.HangmanController",
-    "Method": "GetAllWords",
-    "RelativePath": "api/Hangman/addWords",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[HangmanBackend.Model.Words, HangmanBackend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "HangmanBackend.Controllers.HangmanController",
     "Method": "CheckGameResults",
     "RelativePath": "api/Hangman/gameResult",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "HangmanBackend.Controllers.HangmanController",
-    "Method": "GetRandomWord",
-    "RelativePath": "api/Hangman/getRandom",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -93,6 +53,26 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "HangmanBackend.Controllers.HangmanController",
+    "Method": "NewGame",
+    "RelativePath": "api/Hangman/NewGame",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.String",

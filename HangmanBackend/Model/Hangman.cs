@@ -6,7 +6,7 @@ namespace HangmanBackend.Model
     {
         private static List<Words> words = new List<Words>();
         Random random = new Random();
-        public Words SecretWord = null;
+        public Words SecretWord;
         private string userAnswer = "";
         private int Mistakes = 0;
         private const int MaxMistakes = 6;
@@ -26,6 +26,7 @@ namespace HangmanBackend.Model
 
         public void SetUserAnswer(Words SecretWord)
         {
+            userAnswer = "";
             for (var i = 0; i < SecretWord.WordName.Length; i++)
             {
                 userAnswer += "_";
@@ -59,14 +60,15 @@ namespace HangmanBackend.Model
 
         public string InitGame()
         {
-            if (words == null)
+            if (words.Count == 0)
             {
                 SetWords();
             }
 
-            userAnswer = "";
             GameWon = false;
             GameLost = false;
+
+            Random random = new Random();
 
             int randomID = random.Next(0, words.Count);
             SecretWord = words[randomID];

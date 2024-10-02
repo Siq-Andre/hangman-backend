@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|c:\\users\\andre.siqueira\\desktop\\estudo\\9 - c#\\hangmanbackend\\hangmanbackend\\model\\hangman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|solutionrelative:hangmanbackend\\model\\hangman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|c:\\users\\andre.siqueira\\desktop\\estudo\\9 - c#\\hangmanbackend\\hangmanbackend\\controllers\\hangmancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|solutionrelative:hangmanbackend\\controllers\\hangmancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|c:\\users\\andre.siqueira\\desktop\\estudo\\9 - c#\\hangmanbackend\\hangmanbackend\\model\\hangman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|solutionrelative:hangmanbackend\\model\\hangman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{701BF8F9-81B2-41D5-BF2F-7818CB7170DD}|HangmanBackend\\HangmanBackend.csproj|c:\\users\\andre.siqueira\\desktop\\estudo\\9 - c#\\hangmanbackend\\hangmanbackend\\model\\words.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -58,26 +58,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "HangmanController.cs",
               "DocumentMoniker": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Controllers\\HangmanController.cs",
               "RelativeDocumentMoniker": "HangmanBackend\\Controllers\\HangmanController.cs",
               "ToolTip": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Controllers\\HangmanController.cs",
               "RelativeToolTip": "HangmanBackend\\Controllers\\HangmanController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAkwDUAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T14:21:04.574Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Hangman.cs",
               "DocumentMoniker": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Model\\Hangman.cs",
               "RelativeDocumentMoniker": "HangmanBackend\\Model\\Hangman.cs",
               "ToolTip": "C:\\Users\\andre.siqueira\\Desktop\\Estudo\\9 - C#\\HangmanBackend\\HangmanBackend\\Model\\Hangman.cs",
               "RelativeToolTip": "HangmanBackend\\Model\\Hangman.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAswE8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwBUAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-01T14:18:57.143Z",
               "EditorCaption": ""
