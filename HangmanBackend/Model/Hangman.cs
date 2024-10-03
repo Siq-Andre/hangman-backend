@@ -11,6 +11,7 @@ namespace HangmanBackend.Model
         private int Mistakes = 0;
         private const int MaxMistakes = 6;
         private List<string> GuessedLetters = new List<string>();
+        public bool CorrectGuess { get; private set; }
         public bool GameWon { get; private set; }
         public bool GameLost { get; private set; }
 
@@ -43,7 +44,7 @@ namespace HangmanBackend.Model
                 return ("The JSON file was not found.");
             }
 
-            
+
             var jsonData = System.IO.File.ReadAllText(wordsJsonPath);
 
             List<Words> listOfWords = JsonSerializer.Deserialize<List<Words>>(jsonData);
@@ -55,7 +56,7 @@ namespace HangmanBackend.Model
 
             words = listOfWords;
             return ("The list of words was updated");
-            
+
         }
 
         public string InitGame()
@@ -120,11 +121,13 @@ namespace HangmanBackend.Model
             if (!SecretWord.WordName.Contains(letter))
             {
                 Mistakes += 1;
+                CorrectGuess = false;
                 GameResult();
                 return;
             }
 
             AddLetterToPlayerGuess(letter);
+            CorrectGuess = true;
             GameResult();
 
         }
