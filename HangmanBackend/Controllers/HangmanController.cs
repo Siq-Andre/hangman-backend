@@ -17,22 +17,21 @@ namespace HangmanBackend.Controllers
         }
 
         [HttpGet("NewGame")]
-        public ActionResult<object> NewGame()
+        public ActionResult<NewGameResponse> NewGame()
         {
             hangmanGame.InitGame();
 
 
-            var response = new
-            {
-                MaskedWord = hangmanGame.GetUserAnswer(),
-                Clue = hangmanGame.SecretWord.Clue
-            };
+            var response = new NewGameResponse();
+
+            response.MaskedWord = hangmanGame.GetUserAnswer();
+            response.Clue = hangmanGame.SecretWord.Clue;
 
             return Ok(response);
         }
 
         [HttpPost("guessLetter")]
-        public ActionResult<object> LetterGuess([FromBody] string guessedLetter)
+        public ActionResult<GuessLetterResponse> LetterGuess([FromBody] string guessedLetter)
         {
             if (string.IsNullOrEmpty(guessedLetter) || guessedLetter.Length != 1)
             {
@@ -46,13 +45,14 @@ namespace HangmanBackend.Controllers
 
             hangmanGame.GuessLetter(guessedLetter);
 
-            var response = new
-            {
-                UpdatedWord = hangmanGame.GetUserAnswer(),
-                GameWon = hangmanGame.GameWon,
-                GameLost = hangmanGame.GameLost,
-                CurrentGuess = hangmanGame.CorrectGuess
-            };
+            var response = new GuessLetterResponse()
+
+
+            response.UpdatedWord = hangmanGame.GetUserAnswer();
+            response.GameWon = hangmanGame.GameWon;
+            response.GameLost = hangmanGame.GameLost;
+            response.CurrentGuess = hangmanGame.CorrectGuess;
+           
 
             return Ok(response);
         }
