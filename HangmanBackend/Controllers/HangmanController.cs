@@ -45,7 +45,7 @@ namespace HangmanBackend.Controllers
 
             hangmanGame.GuessLetter(guessedLetter);
 
-            var response = new GuessLetterResponse()
+            var response = new GuessLetterResponse();
 
 
             response.UpdatedWord = hangmanGame.GetUserAnswer();
