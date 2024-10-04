@@ -9,7 +9,7 @@ namespace HangmanBackend.Model
         public Words SecretWord;
         private string userAnswer = "";
         private int Mistakes = 0;
-        private const int MaxMistakes = 6;
+        private const int MaxMistakes = 7;
         private List<string> GuessedLetters = new List<string>();
         public bool CorrectGuess { get; private set; }
         public bool GameWon { get; private set; }
