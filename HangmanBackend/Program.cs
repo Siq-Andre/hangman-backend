@@ -1,3 +1,5 @@
+using HangmanBackend.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Adicionar o serviço de CORS
@@ -10,6 +12,11 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader(); // Permite qualquer cabeçalho
     });
 });
+
+// Registrar o GameSessionService como um serviço Singleton ou Transient
+builder.Services.AddSingleton<GameSessionService>(); // Singleton - uma única instância usada durante toda a aplicação
+                                                     // ou, se preferir, usar:
+                                                     // builder.Services.AddTransient<GameSessionService>(); // Transient - nova instância criada a cada solicitação
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
