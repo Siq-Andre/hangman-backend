@@ -15,30 +15,25 @@ namespace HangmanBackend.Controllers
             _gameSessionService = gameSessionService;
         }
 
-        // Iniciar um novo jogo
         [HttpGet("NewGame")]
         public ActionResult<NewGameResponse> NewGame()
         {
-            // Cria uma nova instância do jogo da forca
             Hangman hangmanGame = new Hangman();
             hangmanGame.InitGame();
 
-            // Gera um token para o novo jogo
             string token = _gameSessionService.GenerateToken();
             _gameSessionService.StoreToken(token, hangmanGame);
 
-            // Retorna o token e o estado inicial do jogo
             var response = new
             {
-                Token = token,
                 MaskedWord = hangmanGame.GetUserAnswer(),
-                Clue = hangmanGame.SecretWord.Clue
+                Clue = hangmanGame.SecretWord.Clue,
+                Token = token
             };
 
             return Ok(response);
         }
 
-        // Adivinhar uma letra
         [HttpPost("guessLetter")]
         public ActionResult<GuessLetterResponse> LetterGuess([FromBody] string guessedLetter, [FromHeader] string token)
         {
@@ -47,7 +42,6 @@ namespace HangmanBackend.Controllers
                 return BadRequest("Please provide a single valid letter.");
             }
 
-            // Valida o token e recupera o estado do jogo
             if (!_gameSessionService.ValidateToken(token))
             {
                 return BadRequest("Invalid or expired session token.");
@@ -59,13 +53,10 @@ namespace HangmanBackend.Controllers
                 return BadRequest("The secret word has not been initialized. Please start a new game.");
             }
 
-            // Processa o palpite do jogador
             hangmanGame.GuessLetter(guessedLetter);
 
-            // Atualiza o estado do jogo na sessão
             _gameSessionService.UpdateGameState(token, hangmanGame);
 
-            // Retorna o estado atualizado do jogo
             var response = new
             {
                 UpdatedWord = hangmanGame.GetUserAnswer(),
@@ -77,11 +68,9 @@ namespace HangmanBackend.Controllers
             return Ok(response);
         }
 
-        // Verificar o resultado do jogo
         [HttpGet("gameResult")]
         public ActionResult<string> CheckGameResults([FromHeader] string token)
         {
-            // Valida o token e recupera o estado do jogo
             if (!_gameSessionService.ValidateToken(token))
             {
                 return BadRequest("Invalid or expired session token.");
