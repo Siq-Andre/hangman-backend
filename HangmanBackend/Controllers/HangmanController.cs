@@ -24,12 +24,11 @@ namespace HangmanBackend.Controllers
             string token = _gameSessionService.GenerateToken();
             _gameSessionService.StoreToken(token, hangmanGame);
 
-            var response = new
-            {
-                MaskedWord = hangmanGame.GetUserAnswer(),
-                Clue = hangmanGame.SecretWord.Clue,
-                Token = token
-            };
+            var response = new NewGameResponse();
+
+            response.MaskedWord = hangmanGame.GetUserAnswer();
+            response. Clue = hangmanGame.SecretWord.Clue;
+            response.Token = token;
 
             return Ok(response);
         }
@@ -57,13 +56,14 @@ namespace HangmanBackend.Controllers
 
             _gameSessionService.UpdateGameState(token, hangmanGame);
 
-            var response = new
-            {
-                UpdatedWord = hangmanGame.GetUserAnswer(),
-                GameWon = hangmanGame.GameWon,
-                GameLost = hangmanGame.GameLost,
-                CurrentGuess = hangmanGame.CorrectGuess
-            };
+            var response = new GuessLetterResponse();
+
+
+            response.UpdatedWord = hangmanGame.GetUserAnswer();
+            response.GameWon = hangmanGame.GameWon;
+            response.GameLost = hangmanGame.GameLost;
+            response.CurrentGuess = hangmanGame.CorrectGuess;
+            
 
             return Ok(response);
         }

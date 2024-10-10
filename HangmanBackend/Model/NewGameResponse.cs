@@ -4,6 +4,6 @@
     {
         public string MaskedWord { get; set; }
         public string Clue { get; set; }
-        public string token { get; set; }
+        public string Token { get; set; }
     }
 }
