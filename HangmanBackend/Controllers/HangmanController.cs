@@ -70,33 +70,5 @@ namespace HangmanBackend.Controllers
             return Ok(response);
         }
 
-        [HttpGet("gameResult")]
-        public ActionResult<string> CheckGameResults([FromHeader] string token)
-        {
-            if (!_gameSessionService.ValidateToken(token))
-            {
-                return BadRequest("Invalid or expired session token.");
-            }
-
-            var hangmanGame = _gameSessionService.GetGameState(token);
-
-            if (hangmanGame == null)
-            {
-                return BadRequest("No active game session found.");
-            }
-
-            if (hangmanGame.GameWon)
-            {
-                return Ok("You won the game!");
-            }
-            else if (hangmanGame.GameLost)
-            {
-                return Ok("You lost the game!");
-            }
-            else
-            {
-                return Ok("The game is still going.");
-            }
-        }
     }
 }
