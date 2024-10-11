@@ -18,22 +18,24 @@ namespace HangmanBackend.Controllers
         [HttpGet("NewGame")]
         public ActionResult<NewGameResponse> NewGame()
         {
-            Hangman hangmanGame = new Hangman();
+            _gameSessionService.RemoveExpiredTokens();
+
+            var hangmanGame = new Hangman();
             hangmanGame.InitGame();
 
-            string token = _gameSessionService.GenerateToken();
+            var token = _gameSessionService.GenerateToken();
             _gameSessionService.StoreToken(token, hangmanGame);
 
             var response = new NewGameResponse();
 
             response.MaskedWord = hangmanGame.GetUserAnswer();
-            response. Clue = hangmanGame.SecretWord.Clue;
+            response.Clue = hangmanGame.SecretWord.Clue;
             response.Token = token;
 
             return Ok(response);
         }
 
-        [HttpPost("guessLetter")]
+        [HttpPost("GuessLetter")]
         public ActionResult<GuessLetterResponse> LetterGuess([FromBody] string guessedLetter, [FromHeader] string token)
         {
             if (string.IsNullOrEmpty(guessedLetter) || guessedLetter.Length != 1)

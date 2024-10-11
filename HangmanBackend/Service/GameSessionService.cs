@@ -8,7 +8,13 @@ namespace HangmanBackend.Service
 
         public string GenerateToken()
         {
-            return Guid.NewGuid().ToString(); 
+            var token = Guid.NewGuid().ToString();
+            while (sessionTokens.ContainsKey(token))
+            {
+                token = Guid.NewGuid().ToString();
+            }
+
+            return token;
         }
 
         public void StoreToken(string token, Hangman gameState)
@@ -37,6 +43,22 @@ namespace HangmanBackend.Service
                 return sessionTokens[token].GameState;
             }
             return null;
+        }
+
+
+        public void RemoveExpiredTokens()
+        {
+            var now = DateTime.Now;
+
+            var expiredTokens = sessionTokens
+                .Where(token => token.Value.Expiration < now)
+                .Select(token => token.Key)
+                .ToList();
+
+            foreach (var token in expiredTokens)
+            {
+                sessionTokens.Remove(token);
+            }
         }
 
         public void UpdateGameState(string token, Hangman gameState)
