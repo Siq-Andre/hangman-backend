@@ -36,9 +36,9 @@ namespace HangmanBackend.Controllers
         }
 
         [HttpPost("GuessLetter")]
-        public ActionResult<GuessLetterResponse> LetterGuess([FromBody] string guessedLetter, [FromHeader] string token)
+        public ActionResult<GuessLetterResponse> LetterGuess([FromBody] GuessLetterRequest guessedLetter, [FromHeader] string token)
         {
-            if (string.IsNullOrEmpty(guessedLetter) || guessedLetter.Length != 1)
+            if (string.IsNullOrEmpty(guessedLetter.Letter) || guessedLetter.Letter.Length != 1)
             {
                 return BadRequest("Please provide a single valid letter.");
             }
@@ -54,7 +54,7 @@ namespace HangmanBackend.Controllers
                 return BadRequest("The secret word has not been initialized. Please start a new game.");
             }
 
-            hangmanGame.GuessLetter(guessedLetter);
+            hangmanGame.GuessLetter(guessedLetter.Letter);
 
             _gameSessionService.UpdateGameState(token, hangmanGame);
 
