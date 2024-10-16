@@ -1,6 +1,6 @@
 ﻿using HangmanBackend.Model;
+using HangmanBackend.Service;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Json;
 
 namespace HangmanBackend.Controllers
 {
@@ -8,42 +8,55 @@ namespace HangmanBackend.Controllers
     [ApiController]
     public class HangmanController : ControllerBase
     {
-        private static Hangman hangmanGame = new Hangman();
+        private readonly GameSessionService _gameSessionService;
 
-        [HttpGet]
-        public ActionResult<List<Words>> GetAllWords()
+        public HangmanController(GameSessionService gameSessionService)
         {
-            return Ok(hangmanGame.GetWords());
+            _gameSessionService = gameSessionService;
         }
 
         [HttpGet("NewGame")]
         public ActionResult<NewGameResponse> NewGame()
         {
+            _gameSessionService.RemoveExpiredTokens();
+
+            var hangmanGame = new Hangman();
             hangmanGame.InitGame();
 
+            var token = _gameSessionService.GenerateToken();
+            _gameSessionService.StoreToken(token, hangmanGame);
 
             var response = new NewGameResponse();
 
             response.MaskedWord = hangmanGame.GetUserAnswer();
             response.Clue = hangmanGame.SecretWord.Clue;
+            response.Token = token;
 
             return Ok(response);
         }
 
-        [HttpPost("guessLetter")]
-        public ActionResult<GuessLetterResponse> LetterGuess([FromBody] string guessedLetter)
+        [HttpPost("GuessLetter")]
+        public ActionResult<GuessLetterResponse> LetterGuess([FromBody] GuessLetterRequest guessedLetter, [FromHeader] string token)
         {
-            if (string.IsNullOrEmpty(guessedLetter) || guessedLetter.Length != 1)
+            if (string.IsNullOrEmpty(guessedLetter.Letter) || guessedLetter.Letter.Length != 1)
             {
                 return BadRequest("Please provide a single valid letter.");
             }
 
-            if (string.IsNullOrEmpty(hangmanGame.GetUserAnswer()))
+            if (!_gameSessionService.ValidateToken(token))
+            {
+                return BadRequest("Invalid or expired session token.");
+            }
+
+            var hangmanGame = _gameSessionService.GetGameState(token);
+            if (hangmanGame == null || string.IsNullOrEmpty(hangmanGame.GetUserAnswer()))
             {
                 return BadRequest("The secret word has not been initialized. Please start a new game.");
             }
 
-            hangmanGame.GuessLetter(guessedLetter);
+            hangmanGame.GuessLetter(guessedLetter.Letter);
+
+            _gameSessionService.UpdateGameState(token, hangmanGame);
 
             var response = new GuessLetterResponse();
 
@@ -52,28 +65,10 @@ namespace HangmanBackend.Controllers
             response.GameWon = hangmanGame.GameWon;
             response.GameLost = hangmanGame.GameLost;
             response.CurrentGuess = hangmanGame.CorrectGuess;
-           
+            
 
             return Ok(response);
         }
 
-        [HttpGet("gameResult")]
-        public ActionResult<string> CheckGameResults()
-        {
-            if (hangmanGame.GameWon)
-            {
-                return Ok("You won the game!");
-            }
-
-            else if (hangmanGame.GameLost)
-            {
-                return Ok("You lost the game!");
-            }
-
-            else
-            {
-                return Ok("The game is still going");
-            }
-        }
     }
 }
