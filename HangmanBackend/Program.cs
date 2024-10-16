@@ -1,16 +1,18 @@
+using HangmanBackend.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Adicionar o serviço de CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAllOrigins", builder =>
     {
-        builder.AllowAnyOrigin()  // Permite qualquer origem (atenção ao ambiente de produção)
-               .AllowAnyMethod()  // Permite qualquer método HTTP (GET, POST, etc.)
-               .AllowAnyHeader(); // Permite qualquer cabeçalho
+        builder.AllowAnyOrigin()  
+               .AllowAnyMethod()  
+               .AllowAnyHeader(); 
     });
 });
 
+builder.Services.AddSingleton<GameSessionService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -23,7 +25,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Ativar CORS
 app.UseCors("AllowAllOrigins");
 
 app.UseAuthorization();
